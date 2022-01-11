@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <title>Justice Legends PreSale</title>
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-ico">
+    <link rel="stylesheet" href="css/bootstrap.min.css" media="screen" \>
+    <link rel="stylesheet" href="css/style.css" media="screen" \>
+
+    <script src="js/jquery.min.js"></script>
+    <script src="js/bootstrap/bootstrap.min.js"></script>
+</head>
+
+
+<body>
+
+    <header>
+        <div class="container-fluid">
+            <nav class="navbar navbar-expand-lg">
+                <a class="navbar-brand" href="#">
+                    <img src="images/new-logo.png" class="img-fluid" style="width: 80px;">
+                </a>
+
+                <button id="btn-connect" class="unlock-wallet but-connect">Connect</button>
+            </nav>
+        </div>
+    </header>
+
+    <div class="container">
+        <div class="row">
+            <div class="col-md-8 wrapper">
+                <div class="container-fluid">
+
+                    <div class="row balance-wrap">
+                        <div class="col-md-5 balance-card">
+                            <h3>Your BNB Balance</h3>
+                            <p id="your-bnb">0</p>
+                        </div>
+                        <div class="col-md-5 balance-card">
+                            <h3>Your JUS Balance</h3>
+                            <p id="your-jus">0</p>
+                        </div>
+                    </div>
+
+                    <div class="row balance-wrap">
+                        <div class="buy-wine">
+                            <h3 class="chakra-text css-wjomy9">Buy JUS</h3>
+                            <!--
+                            <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 24 24" focusable="false" class="chakra-icon css-i1hv63" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg">
+							  <path d="M17.65 6.35C16.2 4.9 14.21 4 12 4c-4.42 0-7.99 3.58-7.99 8s3.57 8 7.99 8c3.73 0 6.84-2.55 7.73-6h-2.08c-.82 2.33-3.04 4-5.65 4-3.31 0-6-2.69-6-6s2.69-6 6-6c1.66 0 3.14.69 4.22 1.78L13 11h7V4l-2.35 2.35z">
+							  </path>
+							</svg>
+                            -->
+                        </div>
+                        <p class="wine-text">
+                            This sale offers a very limited number of JUS, if you want to be sure to get an allowance we encourage you to use a high gas price for your transactions.
+                        </p>
+                        <p id="progress-txt" class="progress-percentage">0%</p>
+                        <div class="progress-wrap">
+                            <div aria-valuemax="100" aria-valuemin="0" aria-valuenow="100" role="progressbar" class="progress-bar" id="progress-bar" style="width: 0%"></div>
+                        </div>
+                        <div role="alert" class="alert-wrap">
+                            <span class="alert-icon">
+								<svg viewBox="0 0 24 24" focusable="false" class="chakra-icon css-fi0ww0">
+									<path fill="currentColor" d="M11.983,0a12.206,12.206,0,0,0-8.51,3.653A11.8,11.8,0,0,0,0,12.207,11.779,11.779,0,0,0,11.8,24h.214A12.111,12.111,0,0,0,24,11.791h0A11.766,11.766,0,0,0,11.983,0ZM10.5,16.542a1.476,1.476,0,0,1,1.449-1.53h.027a1.527,1.527,0,0,1,1.523,1.47,1.475,1.475,0,0,1-1.449,1.53h-.027A1.529,1.529,0,0,1,10.5,16.542ZM11,12.5v-6a1,1,0,0,1,2,0v6a1,1,0,1,1-2,0Z">
+									</path>
+								</svg>
+							</span>
+                            <span>
+								Remember to use ' . ' and not ' , ' to separate decimals (Ex: 1.6 BNB). The minimum investment limit is set at 0.01 BNB per wallet.
+							</span>
+                        </div>
+                        <form>
+                            <div class="form-wrap">
+                                <div role="group" class="input-wrap">
+                                    <label id="pay_eth-label" for="pay_eth" class="form-label">Your investment <small>(BNB)</small></label>
+                                    <div value="0.00" class="chakra-numberinput css-1yr7bw8">
+                                        <input inputmode="decimal" type="text" pattern="[0-9]*(.[0-9]+)?" id="input-bnb" aria-readonly="false" aria-required="false" role="spinbutton" aria-valuemin="0" aria-valuemax="0" aria-valuenow="0" aria-valuetext="0.00" autocomplete="off" autocorrect="off"
+                                            class="input-field" placeholder="0.00">
+                                    </div>
+                                </div>
+                                <div role="group" class="input-wrap">
+                                    <label id="get_lkt-label" for="get_lkt" class="form-label">Your allowance <small>(JUS)</small></label>
+                                    <div value="0.00" class="chakra-numberinput css-1yr7bw8">
+                                        <input inputmode="decimal" type="text" pattern="[0-9]*(.[0-9]+)?" id="input-jus" aria-required="false" role="spinbutton" aria-valuemin="0" aria-valuemax="9007199254740991" aria-valuenow="0" aria-valuetext="0.00" autocomplete="off" autocorrect="off" class="input-field"
+                                            placeholder="0.00">
+                                    </div>
+                                </div>
+
+                                <button type="button" id="btn-buy" class="button-buy">Buy</button>
+                            </div>
+                        </form>
+                    </div>
+
+                    <div class="row claim-wrap">
+                        <div class="buy-wine">
+                            <h3 class="chakra-text css-wjomy9">Claim your JUS</h3>
+                            <!--
+                            <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 24 24" focusable="false" class="chakra-icon css-i1hv63" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg">
+							  <path d="M17.65 6.35C16.2 4.9 14.21 4 12 4c-4.42 0-7.99 3.58-7.99 8s3.57 8 7.99 8c3.73 0 6.84-2.55 7.73-6h-2.08c-.82 2.33-3.04 4-5.65 4-3.31 0-6-2.69-6-6s2.69-6 6-6c1.66 0 3.14.69 4.22 1.78L13 11h7V4l-2.35 2.35z">
+							  </path>
+							</svg>
+                            -->
+                        </div>
+
+                    </div>
+
+                    <div class="row balance-wrap">
+                        <div class="col-12 balance-card padding-5">
+                            <span id="dateTime" style="text-align: center;display: block">Launch date (Estimate)
+									<div style="font-size: 15px;font-weight:700">
+										<span id="txt-launch">15 Jan 2022</span>
+                        </div>
+                        </span>
+                    </div>
+                </div>
+
+                <div class="row balance-wrap">
+                    <div class="balance-card lock-wrap padding-5">
+                        <span>Locked amount <div style="font-size: 14px;font-weight:700"><span id="jus-locked">0.00</span></div>
+                    </span>
+                </div>
+                <div class="balance-card lock-wrap padding-5">
+                    <span>
+								<span id="text1">Available Balance to claim</span>
+                    <div style="font-size: 14px;font-weight:700">
+                        <span id="jus-avaiable">0.00</span>
+                    </div>
+                    </span>
+                </div>
+                <p class="wine-text">
+                    You will be able to collect your JUS through this form once the public sale is over.
+                </p>
+                <button id="btn-claim" type="button" class="button-buy">Claim</button>
+            </div>
+
+
+        </div>
+    </div>
+    </div>
+    </div>
+
+    <!-- Modal Connect -->
+    <!--     <div class="modal fade" id="modalConnectWallet" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+                <div class="modal-header" style="display: flex; align-items: center;font-style: normal; font-weight: 500;font-size: 1.5rem;border-bottom: none;">
+                    <div class="modal-title" id="exampleModalLongTitle">Connect to a wallet</div>
+                    <a data-dismiss="modal" role="button">
+                        <img src="./images/close.png" style="width: 14px; height: 14px;">
+                    </a>
+                </div>
+                <div class="modal-body" style="font-size: 1rem;padding-top: 5px;">
+                    <a id="btn-connect-metamask" data-dismiss="modal" role="button" class="btn-wallet" style="display: flex;">
+                        <div style="display: flex;flex-grow: 1;"><div class="scale">Metamask</div></div>
+                        <img src="./images/metamask.png" style="width: 27px; height: 24px;">
+                    </a>
+                    <a id="btn-connect-trust" data-dismiss="modal" role="button" class="btn-wallet" style="display: flex;margin-top: 20px;">
+                        <div style="display: flex;flex-grow: 1;"><div class="scale">Trust wallet</div></div>
+                        <img src="./images/trust.png" style="width: 28px; height: 28px;">
+                    </a>
+                    <a id="btn-connect-wlconnect" data-dismiss="modal" role="button" class="btn-wallet" style="display: flex;margin-top: 20px;">
+                        <div style="display: flex;flex-grow: 1;"><div class="scale">WalletConnect</div></div>
+                        <img src="./images/wlconnect.svg" style="width: 28px; height: 28px;">
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div> -->
+
+    <script src="https://unpkg.com/web3@1.6.0/dist/web3.min.js"></script>
+    <script src="https://unpkg.com/@walletconnect/web3-provider@1.6.5/dist/umd/index.min.js"></script>
+    <script src="js/web3_config.js"></script>
+    <script src="js/web3_index.js"></script>
+
+</body>
+
+</html>
