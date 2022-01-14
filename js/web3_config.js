@@ -8,7 +8,7 @@ let ABI_TOKEN = [{ "inputs": [], "stateMutability": "nonpayable", "type": "const
 
 
 // let ADDRESS_PRESALE = "0x27249DD65A6136065a1EEd75D80FaE468B54f236";
-let ADDRESS_PRESALE = "0xc54CAF6D4e7e2595866Fd1575b20790B7c24f58d";
+let ADDRESS_PRESALE = "0x8b085c0c6714e1aa3f5f9b28bEb192ea3743038A";
 let ABI_PRESALE = [
 	{
 		"anonymous": false,
